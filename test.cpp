@@ -9,16 +9,26 @@
 #include<unistd.h> // para sleep (linux). Usar  #include<windows.h> para Windows
 
 int main() {
-  moving_image im;
-
-  im.draw("imagen.png");
-  im.move_left(500);
-  sleep(2);
-  im.draw("imagen_desplazada_500.png");
-  im.move_left(100);
-  sleep(2);
-  im.draw("imagen_desplazada_600.png");
-
+  while (1) {
+      moving_image im;
+      im.draw("mario.png");
+      sleep(1);
+      im.rotate();
+      im.draw("mario.png");
+      sleep(1);
+      im.rotate();
+      im.draw("mario.png");
+      sleep(1);
+      im.rotate();
+      im.draw("mario.png");
+      sleep(1);
+      im.undo();
+      im.draw("mario.png");
+      sleep(1);
+      im.move_right(500);
+      im.draw("mario.png");
+      sleep(1);
+  }
   /* NOTA 1: Si usan el mismo nombre para las imágenes, entonces cada llamada al
   método draw() sobreescribirá a la imagen */
 
